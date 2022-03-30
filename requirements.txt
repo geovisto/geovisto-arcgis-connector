@@ -1,0 +1,11 @@
+fastapi[all]
+geojson-pydantic
+
+# Geopandas requirements 
+fiona # needs gdal `brew install gdal`
+pyproj # needs proj `brew install proj`, `brew install spatialindex`
+rtree
+shapely
+geopandas
+
+# export SPATIALINDEX_C_LIBRARY='/opt/homebrew/Cellar/spatialindex/1.9.3/lib'
