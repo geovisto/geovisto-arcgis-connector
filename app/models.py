@@ -32,16 +32,15 @@ class DatasetMetadata(BaseModel):
 
     id: str
     name: str
-    description: str
-    snippet: Optional[str] = None
+    publisher: str
+    description: Optional[str]
     fields: list[Field]
     thumbnail: HttpUrl
     structuredLicense: dict
     tags: list[str] = []
-    recordCount: int
-    slug: Optional[str] = None
-    url: HttpUrl
-    data: HttpUrl
+    recordCount: Optional[int]
+    url: str
+    data: str
 
 
 class GeovistoFeature(Feature):
@@ -52,17 +51,14 @@ class GeovistoFeature(Feature):
     bbox: Optional[BBox] = None
 
 
-class Centroid(BaseModel):
-    """Defines central point of Feature object."""
-
-    id: int
-    lat: float
-    long: float
+class FeatureCollection(BaseModel):
+    type: str
+    features: list[object]
 
 
 class DatasetGeospatial(BaseModel):
     """Compound of all dataset parsed data for Geovisto."""
 
     data: list[dict]
-    geometry: list[GeovistoFeature]
-    centroids: list[Centroid]
+    geometry: FeatureCollection
+    centroids: FeatureCollection
