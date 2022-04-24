@@ -4,6 +4,7 @@ import geopandas
 import urllib
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from urllib.parse import urlencode
 
 from app.models import DatasetMetadata, DatasetGeospatial
@@ -14,6 +15,17 @@ app = FastAPI(**APP_DOCUMENTATION)
 ARCGIS_HUB_DOMAIN = "https://hub.arcgis.com"
 ITEM_PATH = "https://www.arcgis.com/sharing/rest/content/items/"
 
+app = FastAPI(**APP_DOCUMENTATION)
+
+# add “Access-Control-Allow-Origin: *” header for localhost testing purposes
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["POST", "GET"],
+	allow_headers=["*"],
+    max_age=3600,
+)
 
 @app.get("/")
 def available_routes():
