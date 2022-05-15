@@ -1,6 +1,7 @@
-"""
-Configuration file containing global constants.
-"""
+# title           :config.py
+# description     :Configuration file containing global constants of Geovisto data-provider module backend server.
+# author          :Petr Knetl (456302@mail.muni.cz)
+# licence         :MIT
 
 # folder where are parsed datasets stored (file cache path)
 STORAGE_FOLDER = "data"

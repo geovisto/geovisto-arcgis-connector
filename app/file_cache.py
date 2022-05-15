@@ -1,3 +1,8 @@
+# title           :file_cache.py
+# description     :File cache functionality of Geovisto data-providel module backend.
+# author          :Petr Knetl (456302@mail.muni.cz)
+# licence         :MIT
+
 import requests
 import json
 import os

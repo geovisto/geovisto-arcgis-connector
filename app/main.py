@@ -1,3 +1,8 @@
+# title           :main.py
+# description     :Core file of Geovisto data provider plugin backend api.
+# author          :Petr Knetl (456302@mail.muni.cz)
+# licence         :MIT
+
 import json
 import requests
 import geopandas

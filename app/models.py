@@ -1,3 +1,8 @@
+# title           :models.py
+# description     :API inputs and outputs type definitions.
+# author          :Petr Knetl (456302@mail.muni.cz)
+# licence         :MIT
+
 from typing import Any, Optional
 from pydantic import BaseModel, HttpUrl
 from geojson_pydantic import Feature
